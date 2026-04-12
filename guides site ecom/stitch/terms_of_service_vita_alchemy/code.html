@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Space_Grotesk:wght@300;400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-tertiary": "#5e1700",
+                  "secondary-fixed-dim": "#bec2ff",
+                  "secondary": "#bec2ff",
+                  "inverse-surface": "#e5e2e1",
+                  "surface-container-highest": "#353535",
+                  "on-tertiary-fixed-variant": "#852400",
+                  "on-secondary-fixed-variant": "#0000ef",
+                  "on-tertiary-fixed": "#3a0b00",
+                  "surface": "#131313",
+                  "on-secondary-container": "#b6baff",
+                  "inverse-primary": "#446900",
+                  "on-secondary": "#0001ac",
+                  "on-surface": "#e5e2e1",
+                  "on-error-container": "#ffdad6",
+                  "secondary-container": "#080cff",
+                  "tertiary-fixed-dim": "#ffb59e",
+                  "outline-variant": "#424936",
+                  "surface-dim": "#131313",
+                  "primary-container": "#a3e635",
+                  "primary": "#ccff80",
+                  "tertiary-container": "#ffc5b4",
+                  "on-secondary-fixed": "#00006e",
+                  "surface-container-low": "#1c1b1b",
+                  "inverse-on-surface": "#313030",
+                  "surface-bright": "#393939",
+                  "on-background": "#e5e2e1",
+                  "surface-tint": "#98da27",
+                  "on-primary": "#213600",
+                  "tertiary-fixed": "#ffdbd0",
+                  "primary-fixed-dim": "#98da27",
+                  "on-surface-variant": "#c2cab0",
+                  "on-primary-fixed-variant": "#334f00",
+                  "background": "#131313",
+                  "error": "#ffb4ab",
+                  "primary-fixed": "#b2f746",
+                  "error-container": "#93000a",
+                  "tertiary": "#ffeae4",
+                  "on-primary-fixed": "#121f00",
+                  "on-tertiary-container": "#a62f00",
+                  "surface-container-high": "#2a2a2a",
+                  "on-primary-container": "#416400",
+                  "surface-variant": "#353535",
+                  "on-error": "#690005",
+                  "outline": "#8c947c",
+                  "surface-container-lowest": "#0e0e0e",
+                  "surface-container": "#20201f",
+                  "secondary-fixed": "#e0e0ff"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "fontFamily": {
+                  "headline": ["Noto Serif"],
+                  "body": ["Inter"],
+                  "label": ["Space Grotesk"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #131313; }
+    ::-webkit-scrollbar-thumb { background: #353535; border-radius: 4px; }
+    .glass-effect {
+      background: rgba(57, 57, 57, 0.6);
+      backdrop-filter: blur(24px);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Navigation Suppression: Terms of Service is a task-focused sub-page. Navigation shell is excluded per shell visibility rules. -->
+<header class="w-full bg-[#131313] border-b border-[#353535]/20 z-50">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#ccff80] font-headline">BIOLABS NOIR</div>
+<a class="group flex items-center gap-2 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="/">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+        Back to Laboratory
+      </a>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative py-20 px-6 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/10 rounded-full blur-[100px]"></div>
+</div>
+<div class="max-w-4xl mx-auto relative z-10">
+<div class="inline-block px-3 py-1 bg-surface-container-high border border-outline-variant/30 mb-6">
+<span class="font-label text-xs uppercase tracking-[0.2em] text-primary">Legal Framework v2.4</span>
+</div>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tight text-on-surface mb-8">Terms of <br/><span class="text-primary italic">Synthetic Service</span></h1>
+<p class="font-label text-on-surface-variant text-sm tracking-widest uppercase mb-12">Last Updated: October 24, 2024</p>
+<div class="h-px w-full bg-gradient-to-r from-primary/50 to-transparent"></div>
+</div>
+</section>
+<!-- Content Grid -->
+<section class="max-w-7xl mx-auto px-6 pb-32 grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Side Table of Contents (Fixed on Desktop) -->
+<aside class="md:col-span-3 hidden md:block">
+<div class="sticky top-12 space-y-4">
+<p class="font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant/60 mb-6">Manifesto Index</p>
+<nav class="flex flex-col gap-4 border-l border-surface-container-highest">
+<a class="pl-4 font-label text-xs uppercase tracking-widest text-primary border-l-2 border-primary -ml-[1.5px]" href="#ordering">01. Order Terms</a>
+<a class="pl-4 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all" href="#shipping">02. Shipping Logistics</a>
+<a class="pl-4 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all" href="#refunds">03. Refund Protocol</a>
+<a class="pl-4 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all" href="#liability">04. Liability &amp; Limits</a>
+<a class="pl-4 font-label text-xs uppercase tracking-widest text-on-surface-variant hover:text-primary transition-all" href="#compliance">05. Compliance</a>
+</nav>
+</div>
+</aside>
+<!-- Main Legal Content -->
+<div class="md:col-span-9 space-y-24">
+<!-- Section 01: Order Terms -->
+<article class="scroll-mt-24" id="ordering">
+<div class="flex items-center gap-4 mb-8">
+<span class="font-label text-primary text-xl font-bold">01</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">Order Execution &amp; Terms</h2>
+</div>
+<div class="space-y-6 text-on-surface-variant leading-relaxed">
+<p>All acquisitions through BIOLABS NOIR represent a formal engagement between the Synthetic Elite and our laboratory infrastructure. By initiating a transaction, you acknowledge that our formulations are precision-engineered and availability is governed by synthetic alchemy cycles.</p>
+<ul class="space-y-4">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+<span>Verification: We reserve the right to refuse orders from unauthorized redistribution networks or suspected non-human entities.</span>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+<span>Pricing: All prices are subject to volatility based on rare nutrient availability and laboratory overhead.</span>
+</li>
+</ul>
+</div>
+</article>
+<!-- Section 02: Shipping -->
+<article class="scroll-mt-24 bg-surface-container-low p-8 border-l-2 border-primary" id="shipping">
+<div class="flex items-center gap-4 mb-8">
+<span class="font-label text-primary text-xl font-bold">02</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">Global Shipping Logistics</h2>
+</div>
+<div class="space-y-6 text-on-surface-variant">
+<p>Our distribution network operates with military-grade precision. Shipments are dispatched in light-shielded, climate-controlled containers to ensure molecular integrity during transit.</p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+<div class="bg-surface-container-high p-6">
+<h4 class="font-label text-xs uppercase tracking-widest text-on-surface mb-2">Priority Transit</h4>
+<p class="text-sm">2-4 Laboratory Cycles (Global Hubs)</p>
+</div>
+<div class="bg-surface-container-high p-6">
+<h4 class="font-label text-xs uppercase tracking-widest text-on-surface mb-2">Molecular Tracking</h4>
+<p class="text-sm">Real-time GPS + Integrity Telemetry</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Section 03: Refunds -->
+<article class="scroll-mt-24" id="refunds">
+<div class="flex items-center gap-4 mb-8">
+<span class="font-label text-primary text-xl font-bold">03</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">Refund Protocol</h2>
+</div>
+<div class="space-y-6 text-on-surface-variant">
+<p>Due to the bio-active nature of our compounds, returns are strictly managed to prevent cross-contamination of laboratory environments.</p>
+<div class="border border-outline-variant/20 p-8">
+<div class="flex items-start gap-4 mb-6">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="text-sm font-label uppercase tracking-wider text-secondary">Biological Integrity Clause</p>
+</div>
+<p class="italic text-on-surface">"Items that have been breached or exposed to non-sterile environments are non-refundable. Integrity seals must remain intact for return eligibility within 14 cycles."</p>
+</div>
+</div>
+</article>
+<!-- Section 04: Liability -->
+<article class="scroll-mt-24" id="liability">
+<div class="flex items-center gap-4 mb-8">
+<span class="font-label text-primary text-xl font-bold">04</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">Liability &amp; Limits</h2>
+</div>
+<div class="space-y-6 text-on-surface-variant">
+<p>VITA-ALCHEMY (BIOLABS NOIR) provides formulations intended for cognitive and biological optimization. The user assumes full responsibility for the integration of these compounds into their biological system.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-4">
+<h4 class="text-on-surface font-semibold">Technical Precision</h4>
+<p class="text-sm">We do not warrant that results will be identical across all genotypes. Individual baseline chemistry will dictate final outcomes.</p>
+</div>
+<div class="space-y-4">
+<h4 class="text-on-surface font-semibold">System Failure</h4>
+<p class="text-sm">Biolabs Noir is not liable for secondary effects resulting from improper storage or misuse outside of laboratory-prescribed protocols.</p>
+</div>
+</div>
+</div>
+</article>
+<!-- Section 05: Compliance -->
+<article class="scroll-mt-24" id="compliance">
+<div class="flex items-center gap-4 mb-8">
+<span class="font-label text-primary text-xl font-bold">05</span>
+<h2 class="font-headline text-3xl font-bold tracking-tight">International Compliance</h2>
+</div>
+<div class="p-8 bg-[#1c1b1b] border border-primary/10 relative overflow-hidden">
+<div class="relative z-10">
+<p class="text-on-surface-variant mb-6 italic">These terms are governed by the laws of the Synthetic Jurisdiction and International Supplement Accord.</p>
+<button class="bg-primary text-on-primary px-8 py-3 font-label text-xs uppercase tracking-widest hover:shadow-[0_0_20px_rgba(204,255,128,0.3)] transition-all">
+                Download PDF Ledger
+              </button>
+</div>
+<!-- Decorative Lab Element -->
+<div class="absolute -right-12 -bottom-12 opacity-10">
+<span class="material-symbols-outlined text-[180px]">biotech</span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Support CTA -->
+<section class="max-w-4xl mx-auto px-6 mb-32">
+<div class="glass-effect p-12 text-center border border-outline-variant/20">
+<h3 class="font-headline text-2xl mb-4">Legal Inquiry Required?</h3>
+<p class="text-on-surface-variant mb-8">If you require clarification on the molecular status of our terms, contact our support infrastructure.</p>
+<a class="text-primary font-label text-sm uppercase tracking-[0.3em] border-b border-primary pb-1 hover:text-on-surface hover:border-on-surface transition-all" href="mailto:legal@biolabsnoir.com">Establish Connection</a>
+</div>
+</section>
+</main>
+<footer class="bg-[#1c1b1b] w-full border-t border-[#353535]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-10 gap-6">
+<div class="text-lg font-black text-[#ccff80]">BIOLABS NOIR</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#ccff80] underline-offset-4 hover:underline transition-all" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all" href="#">Refund Policy</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all" href="#">Compliance</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all" href="#">Lab Reports</a>
+</div>
+<p class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#c2cab0]">© 2024 BIOLABS NOIR. SYNTHETIC ALCHEMY FOR THE ELITE.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,60 @@
+# Design System: BioLabs Noir (The Synthetic Alchemist)
+
+This document serves as the technical specification for the "BioLabs Noir" design system, optimized for high-performance supplement e-commerce.
+
+## 1. Creative North Star: "The Synthetic Alchemist"
+The aesthetic combines clinical precision with high-fashion editorial. It's dark, authoritative, and elite.
+
+## 2. Visual Foundation
+
+### Color Palette
+- **Primary:** `#A3E635` (Neon Green/Lime) - Used for primary CTAs, active states, and high-impact accents.
+- **Surface (Deep):** `#131313` - Main background for pages and sections.
+- **Surface (Container):** `#1c1b1b` - Used for cards, sections, and structural separation.
+- **Text (High Emphasis):** `#FFFFFF` - Headings and primary body text.
+- **Text (Medium Emphasis):** `#c2cab0` - Secondary information, labels, and inactive nav.
+- **Borders/Lines:** `#353535` - Low-opacity strokes for subtle structure.
+
+### Typography
+- **Headlines:** `Noto Serif` - Used for high-impact, editorial-style titles. High contrast, tight letter-spacing.
+- **Body & Labels:** `Space Grotesk` - Technical, monospaced-adjacent feel for functional UI, data points, and metadata.
+- **Scale:** 
+  - Display: 64px+
+  - Heading 1: 48px
+  - Heading 2: 32px
+  - Body: 16px
+  - Label: 12px (Uppercase, tracked out)
+
+### Shape & Structure
+- **Roundness:** `4px` (Small radius) - Maintains a sharp, surgical feel.
+- **Spacing:** Generous vertical whitespace. Sections are separated by large gutters to create an "archive" or "lab report" feel.
+- **Borders:** 1px solid borders are preferred over shadows for depth.
+
+## 3. Shared Components
+
+### Top Navigation Bar
+- **Logo:** `BIOLABS NOIR` (Noto Serif, Bold, Uppercase, Tracking-tighter)
+- **Links:** Shop, Science, About, Support (Space Grotesk, Uppercase)
+- **Actions:** Cart icon, Account icon.
+- **Style:** Fixed, blur background (`backdrop-blur-xl`), subtle bottom border.
+
+### Footer
+- **Layout:** 4-column grid (Brand info, Navigation, Support, Newsletter).
+- **Style:** Dark surface, small uppercase labels, copyright line at the bottom.
+
+### Buttons
+- **Primary:** Solid `#A3E635` background, black text, bold, uppercase.
+- **Secondary:** Transparent with `#A3E635` border or white text.
+
+## 4. Design Patterns
+- **Product Cards:** Dark background, high-quality 3D renders, neon green labels for status (e.g., "NEW RELEASE", "IN STOCK").
+- **Legal/Technical Content:** Numbered sections (01, 02, etc.) in Space Grotesk to emphasize clinical rigor.
+- **Data Visualization:** Use bar charts or percentage indicators with neon green fills to show "Bioavailability" or "Clinical Results".
+
+## 5. Directory of Screens
+- **Homepage:** `{{DATA:SCREEN:SCREEN_9}}`
+- **Product Detail (Neuro):** `{{DATA:SCREEN:SCREEN_12}}`
+- **Product Detail (Longevity):** `{{DATA:SCREEN:SCREEN_4}}`
+- **Product Detail (Recovery):** `{{DATA:SCREEN:SCREEN_11}}`
+- **Cart:** `{{DATA:SCREEN:SCREEN_13}}`
+- **Legal Pages:** `{{DATA:SCREEN:SCREEN_8}}`, `{{DATA:SCREEN:SCREEN_6}}`, `{{DATA:SCREEN:SCREEN_10}}`

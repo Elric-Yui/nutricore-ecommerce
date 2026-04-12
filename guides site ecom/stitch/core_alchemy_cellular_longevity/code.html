@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CORE-ALCHEMY | Cellular Longevity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Inter:wght@300;400;600&amp;family=Space+Grotesk:wght@300;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#b2f746",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#852400",
+                        "on-tertiary": "#5e1700",
+                        "inverse-primary": "#446900",
+                        "error": "#ffb4ab",
+                        "surface-dim": "#131313",
+                        "surface-container": "#20201f",
+                        "surface-bright": "#393939",
+                        "on-error": "#690005",
+                        "on-primary-container": "#416400",
+                        "surface-variant": "#353535",
+                        "on-primary-fixed-variant": "#334f00",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-fixed": "#3a0b00",
+                        "surface": "#131313",
+                        "primary-container": "#a3e635",
+                        "secondary-container": "#080cff",
+                        "on-secondary-fixed-variant": "#0000ef",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#c2cab0",
+                        "surface-container-low": "#1c1b1b",
+                        "outline": "#8c947c",
+                        "secondary": "#bec2ff",
+                        "on-background": "#e5e2e1",
+                        "surface-tint": "#98da27",
+                        "surface-container-highest": "#353535",
+                        "tertiary-fixed-dim": "#ffb59e",
+                        "on-secondary-fixed": "#00006e",
+                        "on-primary-fixed": "#121f00",
+                        "inverse-on-surface": "#313030",
+                        "tertiary-fixed": "#ffdbd0",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-container": "#ffc5b4",
+                        "on-secondary": "#0001ac",
+                        "on-tertiary-container": "#a62f00",
+                        "on-primary": "#213600",
+                        "background": "#131313",
+                        "outline-variant": "#424936",
+                        "tertiary": "#ffeae4",
+                        "primary": "#ccff80",
+                        "secondary-fixed-dim": "#bec2ff",
+                        "secondary-fixed": "#e0e0ff",
+                        "surface-container-high": "#2a2a2a",
+                        "primary-fixed-dim": "#98da27",
+                        "on-secondary-container": "#b6baff",
+                        "error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #353535; border-radius: 4px; }
+        .glass-nav { background: rgba(19, 19, 19, 0.6); backdrop-filter: blur(24px); }
+        .hero-gradient { background: radial-gradient(circle at 70% 30%, rgba(204, 255, 128, 0.05) 0%, rgba(19, 19, 19, 0) 70%); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#ccff80] uppercase font-headline">ALCHEMIST</div>
+<div class="hidden md:flex items-center gap-8 font-label text-sm tracking-widest">
+<a class="text-[#ccff80] border-b border-[#ccff80] pb-1" href="#">Shop</a>
+<a class="text-[#c2cab0] hover:text-[#ccff80] transition-colors duration-300" href="#">Research</a>
+<a class="text-[#c2cab0] hover:text-[#ccff80] transition-colors duration-300" href="#">About</a>
+<a class="text-[#c2cab0] hover:text-[#ccff80] transition-colors duration-300" href="#">Philosophy</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#c2cab0] hover:text-[#ccff80] transition-colors">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="text-[#c2cab0] hover:text-[#ccff80] transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 min-h-screen hero-gradient">
+<!-- Breadcrumb -->
+<div class="max-w-[1440px] mx-auto px-8 py-4">
+<div class="flex items-center gap-2 font-label text-[10px] uppercase tracking-[0.2em] text-outline">
+<a class="hover:text-primary" href="#">Supplements</a>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-on-surface-variant">Longevity</span>
+</div>
+</div>
+<section class="max-w-[1440px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 pb-20">
+<!-- Left: Product Visualization -->
+<div class="lg:col-span-7 space-y-8">
+<div class="relative bg-surface-container-low aspect-[4/5] flex items-center justify-center overflow-hidden">
+<img alt="Core-Alchemy Glass Jar" class="w-full h-full object-cover mix-blend-lighten opacity-90 scale-105" data-alt="Premium dark amber glass supplement jar with a minimalist black label and lime green typography sitting on a dark stone surface with dramatic soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaonxWCgffVv-_j0aF5wfK6Zd8a3JCFWlpI7PW2YciJTxHObDgHKASsvUHm0CNF9YGhr0ijNdlKxLGHaraA9GALZXPdri1I_uqf216W9BCxAPYxTe7JtpcQ2Ybv1yO4n_ZOkKKkIaX-1vpeQX6nQRr7KC-Wrjym2G_hP0_7DEXwtkMey7WfGSos7CBRzWb-E-MhHAbXiJ1dWSCPG5IfhlqHNHkKrjGkTK32XEC63-yIYicQmpzb0gxB4-G5rqBAT8xiX8PJ5rQAVw"/>
+<!-- Feature Tags (Asymmetric) -->
+<div class="absolute top-12 left-12 flex flex-col gap-4">
+<div class="bg-surface-container-highest/80 backdrop-blur-md px-4 py-2 border-l-2 border-primary">
+<p class="font-label text-[10px] uppercase tracking-tighter text-secondary">Molecular Stability</p>
+</div>
+</div>
+</div>
+<!-- Technical Bento Grid -->
+<div class="grid grid-cols-3 gap-1">
+<div class="bg-surface-container-low p-6 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-primary" data-icon="science">science</span>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Clinical Grade Bio-Availability</p>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-secondary" data-icon="bolt">bolt</span>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Cellular ATP Optimization</p>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-primary" data-icon="shield_moon">shield_moon</span>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant">DNA Repair Pathway Support</p>
+</div>
+</div>
+</div>
+<!-- Right: Product Specs & Actions -->
+<div class="lg:col-span-5 flex flex-col">
+<div class="sticky top-32">
+<h1 class="font-headline text-5xl md:text-6xl font-black tracking-tighter leading-none mb-4">CORE-ALCHEMY</h1>
+<h2 class="font-label text-sm uppercase tracking-[0.3em] text-primary mb-8">Cellular Longevity Catalyst</h2>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed mb-12 max-w-md">
+                        A scientifically-curated Vitality Complex designed to modulate metabolic pathways and optimize cellular regeneration at the mitochondrial level.
+                    </p>
+<div class="flex items-baseline gap-4 mb-12">
+<span class="font-headline text-4xl">$110.00</span>
+<span class="font-label text-xs text-outline uppercase tracking-widest">60 Capsules / 30 Day Supply</span>
+</div>
+<!-- CTA Section -->
+<div class="space-y-4 mb-16">
+<button class="w-full bg-primary text-on-primary font-label font-bold py-5 tracking-widest uppercase text-sm hover:shadow-[0_0_20px_rgba(204,255,128,0.3)] transition-all duration-300 rounded-lg">
+                            Add to System
+                        </button>
+<button class="w-full border border-outline-variant text-on-surface font-label font-bold py-5 tracking-widest uppercase text-sm hover:bg-surface-container-highest transition-all duration-300 rounded-lg">
+                            Subscribe &amp; Save (15%)
+                        </button>
+</div>
+<!-- Technical Specs Accordion (Simulated) -->
+<div class="border-t border-outline-variant pt-8 space-y-10">
+<div class="group">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-label text-xs uppercase tracking-widest text-on-surface">The Science</h3>
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+<div class="space-y-4 font-body text-sm text-on-surface-variant">
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>NMN Stabilized</span>
+<span class="text-secondary">250mg</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Trans-Resveratrol</span>
+<span class="text-secondary">500mg</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/10 pb-2">
+<span>Spermidine HCl</span>
+<span class="text-secondary">10mg</span>
+</div>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined" data-icon="verified">verified</span>
+<span class="font-label text-[10px] uppercase tracking-[0.2em]">Third Party Lab Tested</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Content Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-[1440px] mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div>
+<h2 class="font-headline text-4xl mb-8 leading-tight">Beyond Supplementation: <br/><span class="text-primary italic">Alchemical Precision.</span></h2>
+<div class="space-y-12">
+<div class="border-l-2 border-secondary pl-6">
+<p class="font-label text-xs uppercase tracking-widest text-secondary mb-2">Protocol 01</p>
+<p class="text-on-surface-variant">Inhibit the mechanisms of cellular senescence through targeted polyphenol activation.</p>
+</div>
+<div class="border-l-2 border-primary pl-6">
+<p class="font-label text-xs uppercase tracking-widest text-primary mb-2">Protocol 02</p>
+<p class="text-on-surface-variant">Replenish NAD+ reservoirs to drive efficient mitochondrial energy production.</p>
+</div>
+</div>
+</div>
+<div class="relative">
+<img alt="Laboratory Visual" class="rounded-xl grayscale hover:grayscale-0 transition-all duration-700" data-alt="Microscopic view of cellular structures with soft glowing blue and violet lights, conveying high-tech laboratory research" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgxtIMbuDJaP8EGvdykH1ExyFyGF-wediAdwEuTuG5nciOwMrx3sLM1u0riYT6m4j80nGJIOCEJ2XSpN_JQX80HjWeivkUFFFTCeNJm3B9Adb8aObw__3YRE18GAIXPf_Tkalv6REqQuio1RSaiUxOGgbEjvOALDLmZSSg2M5sv_Rt5QZLd439O0XX2wIT2szJas0eKAhgTvMHrODLK6e9CyOWhSaCDVzLoeN7y3XNOhWRv7QLQc6yNwboBEr0rYqcpTEPfPUQVrU"/>
+<div class="absolute -bottom-6 -left-6 bg-surface p-8 border border-outline-variant max-w-[200px]">
+<p class="font-label text-[10px] leading-tight uppercase tracking-widest text-outline">Verified Cellular Absorption Rate: 98.4%</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1c1b1b] w-full mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-[1440px] mx-auto">
+<div class="space-y-6">
+<div class="text-xl font-bold tracking-widest text-[#ccff80] font-headline uppercase">ALCHEMIST</div>
+<p class="font-body text-xs text-[#c2cab0] leading-relaxed">
+                    Pioneering the future of human optimization through synthetic biological mastery.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-4">Nav</p>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Shop</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Research</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Archive</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-4">Support</p>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Contact</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Shipping</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Returns</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-4">Legal</p>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Privacy Policy</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 font-label text-sm uppercase" href="#">Terms of Service</a>
+<p class="mt-8 font-label text-[10px] text-outline">© 2024 THE SYNTHETIC ALCHEMIST. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+</body></html>

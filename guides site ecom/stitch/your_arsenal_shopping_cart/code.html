@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shopping Cart | ALCHEMIST</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#b2f746",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#852400",
+                    "on-tertiary": "#5e1700",
+                    "inverse-primary": "#446900",
+                    "error": "#ffb4ab",
+                    "surface-dim": "#131313",
+                    "surface-container": "#20201f",
+                    "surface-bright": "#393939",
+                    "on-error": "#690005",
+                    "on-primary-container": "#416400",
+                    "surface-variant": "#353535",
+                    "on-primary-fixed-variant": "#334f00",
+                    "inverse-surface": "#e5e2e1",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "surface": "#131313",
+                    "primary-container": "#a3e635",
+                    "secondary-container": "#080cff",
+                    "on-secondary-fixed-variant": "#0000ef",
+                    "on-error-container": "#ffdad6",
+                    "on-surface-variant": "#c2cab0",
+                    "surface-container-low": "#1c1b1b",
+                    "outline": "#8c947c",
+                    "secondary": "#bec2ff",
+                    "on-background": "#e5e2e1",
+                    "surface-tint": "#98da27",
+                    "surface-container-highest": "#353535",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "on-secondary-fixed": "#00006e",
+                    "on-primary-fixed": "#121f00",
+                    "inverse-on-surface": "#313030",
+                    "tertiary-fixed": "#ffdbd0",
+                    "surface-container-lowest": "#0e0e0e",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "tertiary-container": "#ffc5b4",
+                    "on-secondary": "#0001ac",
+                    "on-tertiary-container": "#a62f00",
+                    "on-primary": "#213600",
+                    "background": "#131313",
+                    "outline-variant": "#424936",
+                    "tertiary": "#ffeae4",
+                    "primary": "#ccff80",
+                    "secondary-fixed-dim": "#bec2ff",
+                    "secondary-fixed": "#e0e0ff",
+                    "surface-container-high": "#2a2a2a",
+                    "primary-fixed-dim": "#98da27",
+                    "on-secondary-container": "#b6baff",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #353535; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#131313]/60 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-[1440px] mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#ccff80] uppercase font-label">
+                ALCHEMIST
+            </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-[#c2cab0] hover:text-[#ccff80] transition-colors font-label text-sm tracking-widest" href="#">Shop</a>
+<a class="text-[#c2cab0] hover:text-[#ccff80] transition-colors font-label text-sm tracking-widest" href="#">Research</a>
+<a class="text-[#c2cab0] hover:text-[#ccff80] transition-colors font-label text-sm tracking-widest" href="#">About</a>
+<a class="text-[#c2cab0] hover:text-[#ccff80] transition-colors font-label text-sm tracking-widest" href="#">Philosophy</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-[#ccff80] relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-primary text-on-primary text-[10px] font-bold px-1.5 py-0.5 rounded-full font-label">2</span>
+</button>
+<button class="text-[#c2cab0] hover:text-[#ccff80] transition-colors">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-8 max-w-[1440px] mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Cart Items Column -->
+<div class="lg:col-span-8">
+<h1 class="font-headline text-5xl md:text-7xl font-black tracking-tighter mb-12">YOUR <span class="text-primary">ORDER</span></h1>
+<div class="space-y-1">
+<!-- Cart Item 1 -->
+<div class="group flex flex-col md:flex-row items-center gap-8 py-8 px-6 bg-surface-container-low transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_40px_rgba(0,0,0,0.4)]">
+<div class="w-full md:w-40 h-40 bg-surface-container-highest overflow-hidden relative">
+<img alt="Supplement bottle" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-110 transition-transform duration-700" data-alt="Modern frosted black supplement bottle with minimalistic neon lime label sitting on a reflective dark slate surface with moody side lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIVoKMBzwNKDkJ_7KZRA86-76Nfa5ofEyi454lZsZI6ZwSlRfkwTxBp6CGfZkbN-NhIL0-WFQ_UBzIzmq1A0kee1Jrr23FI-5XlVa6SBhpJUOZsv8tURRyBKFwFxybdn6dEq_UIsBdblwn1j5mQJtBgPGO6aSmvssUuwfHiWoiodWIZ56Tlo8X7HdcYqqg7QeUwnnuHGa8DgM4_nIuw4EoiFKJQgDz5w_LMoGcAfSBTJTVjx-Ro2xGLdbX1n7qfzCev4gXyDd-Dmw"/>
+</div>
+<div class="flex-grow space-y-2 text-center md:text-left">
+<span class="font-label text-xs tracking-widest text-secondary uppercase">Bio-Performance</span>
+<h3 class="font-headline text-2xl font-bold tracking-tight">NEURO-FLUX ALPHA</h3>
+<p class="text-on-surface-variant font-label text-sm">30 SERVINGS / 600MG NOOTROPIC BLEND</p>
+</div>
+<div class="flex flex-col items-center md:items-end gap-4 min-w-[140px]">
+<div class="flex items-center space-x-4 bg-surface-container-highest px-3 py-1.5 rounded-lg border border-outline-variant/10">
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="font-label font-bold text-sm w-4 text-center">01</span>
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="text-xl font-headline font-bold text-primary tracking-tighter">$84.00</div>
+<button class="text-xs font-label text-on-surface-variant hover:text-error transition-colors uppercase tracking-widest">Remove</button>
+</div>
+</div>
+<!-- Cart Item 2 -->
+<div class="group flex flex-row items-center gap-8 py-8 px-6 bg-surface-container-lowest transition-all duration-500 hover:bg-surface-container hover:shadow-[0_0_40px_rgba(0,0,0,0.4)] border-t border-outline-variant/5">
+<div class="w-full md:w-40 h-40 bg-surface-container-highest overflow-hidden relative">
+<img alt="Capsule container" class="w-full h-full object-cover grayscale contrast-125 group-hover:scale-110 transition-transform duration-700" data-alt="Minimalist clinical amber glass jar with technical typography label surrounded by a dark void with sharp architectural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6TuQ5acXljnq3CdxpOUs0s28buCDNZXu1ascFuF4y3w9fx1_sWXv9xNt6ciE7FI05IZARG8GAsDdRV71dz2cjnNVHyz2jhBJig2Ox-QmS7e0PLxk-r4PsSQQ2fHGeFCLsWAnAbfZg7uEj84KEEtAEVQjVIpqDE9Hv6tBvs3DYV3_QzlnARb8ij5yB9As_RqKwRC5tQa1_5G6v8BGw8tihKmuET1RlllSemJGNB7SVepNiBWbAdq179COkz1rrnHZ-uEHOHeyo0zE"/>
+</div>
+<div class="flex-grow space-y-2">
+<span class="font-label text-xs tracking-widest text-secondary uppercase">Restorative Science</span>
+<h3 class="font-headline text-2xl font-bold tracking-tight">MITO-REGENESIS</h3>
+<p class="text-on-surface-variant font-label text-sm">60 VEGAN CAPSULES / COQ10 COMPLEX</p>
+</div>
+<div class="flex flex-col items-end gap-4 min-w-[140px]">
+<div class="flex items-center space-x-4 bg-surface-container-highest px-3 py-1.5 rounded-lg border border-outline-variant/10">
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<span class="font-label font-bold text-sm w-4 text-center">02</span>
+<button class="text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="text-xl font-headline font-bold text-primary tracking-tighter">$124.00</div>
+<button class="text-xs font-label text-on-surface-variant hover:text-error transition-colors uppercase tracking-widest">Remove</button>
+</div>
+</div>
+</div>
+<!-- Technical Specs / Upsell Section -->
+<div class="mt-20 p-8 bg-surface-container-low border-l-2 border-primary">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div>
+<p class="font-label text-xs text-secondary tracking-[0.2em] uppercase mb-2">Synthetic Alchemist Guarantee</p>
+<p class="font-body text-sm text-on-surface-variant max-w-md">Every formula is validated via third-party HPLC testing. Your selection ships in temperature-controlled sustainable packaging.</p>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-xl">science</span>
+</div>
+<div class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-full border border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-xl">verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Summary Column -->
+<div class="lg:col-span-4">
+<div class="sticky top-32 bg-[#1c1b1b]/80 backdrop-blur-2xl p-8 rounded-xl border border-outline-variant/10 shadow-2xl">
+<h2 class="font-headline text-3xl font-bold tracking-tight mb-8">SUMMARY</h2>
+<div class="space-y-6 mb-8">
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/10">
+<span class="font-label text-sm text-on-surface-variant uppercase tracking-widest">Subtotal</span>
+<span class="font-body font-semibold">$208.00</span>
+</div>
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/10">
+<span class="font-label text-sm text-on-surface-variant uppercase tracking-widest">Allocation (Shipping)</span>
+<span class="font-body font-semibold text-secondary">CALCULATING</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-label text-sm text-on-surface-variant uppercase tracking-widest">Carbon Offset</span>
+<span class="font-body font-semibold">$0.00</span>
+</div>
+</div>
+<div class="flex justify-between items-end mb-12">
+<span class="font-headline text-lg font-bold">TOTAL</span>
+<div class="text-right">
+<span class="block text-[10px] font-label text-primary tracking-widest mb-1">INCL. APPLICABLE TAX</span>
+<span class="font-headline text-4xl font-black text-primary">$208.00</span>
+</div>
+</div>
+<!-- Promo Input -->
+<div class="mb-10 group">
+<label class="block font-label text-[10px] tracking-widest text-on-surface-variant mb-2 uppercase">Protocol Code</label>
+<div class="flex border-b border-outline-variant group-focus-within:border-primary transition-all duration-300">
+<input class="bg-transparent border-none focus:ring-0 w-full text-sm font-label tracking-widest py-2 placeholder:text-outline-variant" placeholder="ENTER ACCESS CODE" type="text"/>
+<button class="text-primary hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full py-5 bg-primary text-on-primary rounded-lg font-label font-bold text-sm tracking-[0.2em] uppercase hover:shadow-[0_0_30px_rgba(204,255,128,0.3)] transition-all duration-500 hover:-translate-y-1 active:translate-y-0">
+                        PROCEED TO CHECKOUT
+                    </button>
+<div class="mt-8 flex justify-center gap-4 opacity-40 grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined">payments</span>
+<span class="material-symbols-outlined">shield_lock</span>
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1c1b1b] border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-[1440px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold tracking-widest text-[#ccff80] font-label mb-8 uppercase">ALCHEMIST</div>
+<p class="text-on-surface-variant font-body text-sm leading-relaxed">Pioneering the synthesis of biological potential through clinical precision and alchemical intuition.</p>
+</div>
+<div class="flex flex-col space-y-6">
+<h4 class="font-label text-xs tracking-[0.2em] text-secondary uppercase">Resources</h4>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 text-sm font-label" href="#">Shipping</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 text-sm font-label" href="#">Science Hub</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 text-sm font-label" href="#">Contact</a>
+</div>
+<div class="flex flex-col space-y-6">
+<h4 class="font-label text-xs tracking-[0.2em] text-secondary uppercase">Legal</h4>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 text-sm font-label" href="#">Privacy Policy</a>
+<a class="text-[#c2cab0] hover:text-[#bec2ff] transition-all duration-300 text-sm font-label" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col space-y-6">
+<h4 class="font-label text-xs tracking-[0.2em] text-secondary uppercase">Newsletter</h4>
+<div class="flex border-b border-outline-variant/30 py-2">
+<input class="bg-transparent border-none focus:ring-0 w-full text-xs font-label tracking-widest uppercase" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="text-primary"><span class="material-symbols-outlined text-sm">east</span></button>
+</div>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Receive early access to limited batch formulations.</p>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-12 py-8 border-t border-outline-variant/10 text-center md:text-left">
+<p class="text-[10px] font-label tracking-widest text-on-surface-variant">© 2024 THE SYNTHETIC ALCHEMIST. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>

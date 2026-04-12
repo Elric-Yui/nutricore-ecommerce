@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;600&amp;family=Space_Grotesk:wght@300;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#5e1700",
+                    "secondary-fixed-dim": "#bec2ff",
+                    "secondary": "#bec2ff",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-container-highest": "#353535",
+                    "on-tertiary-fixed-variant": "#852400",
+                    "on-secondary-fixed-variant": "#0000ef",
+                    "on-tertiary-fixed": "#3a0b00",
+                    "surface": "#131313",
+                    "on-secondary-container": "#b6baff",
+                    "inverse-primary": "#446900",
+                    "on-secondary": "#0001ac",
+                    "on-surface": "#e5e2e1",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#080cff",
+                    "tertiary-fixed-dim": "#ffb59e",
+                    "outline-variant": "#424936",
+                    "surface-dim": "#131313",
+                    "primary-container": "#a3e635",
+                    "primary": "#ccff80",
+                    "tertiary-container": "#ffc5b4",
+                    "on-secondary-fixed": "#00006e",
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-on-surface": "#313030",
+                    "surface-bright": "#393939",
+                    "on-background": "#e5e2e1",
+                    "surface-tint": "#98da27",
+                    "on-primary": "#213600",
+                    "tertiary-fixed": "#ffdbd0",
+                    "primary-fixed-dim": "#98da27",
+                    "on-surface-variant": "#c2cab0",
+                    "on-primary-fixed-variant": "#334f00",
+                    "background": "#131313",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#b2f746",
+                    "error-container": "#93000a",
+                    "tertiary": "#ffeae4",
+                    "on-primary-fixed": "#121f00",
+                    "on-tertiary-container": "#a62f00",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-container": "#416400",
+                    "surface-variant": "#353535",
+                    "on-error": "#690005",
+                    "outline": "#8c947c",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container": "#20201f",
+                    "secondary-fixed": "#e0e0ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #353535; border-radius: 4px; }
+        .glass-panel {
+            background: rgba(57, 57, 57, 0.6);
+            backdrop-filter: blur(24px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="bg-[#131313] dark:bg-[#131313] docked full-width top-0 z-50 border-b border-[#353535]/20 fixed w-full">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-[#ccff80] font-['Noto_Serif']">BIOLABS NOIR</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Noto_Serif'] tracking-tight text-[#c2cab0] hover:text-[#ccff80] transition-colors" href="#">Shop</a>
+<a class="font-['Noto_Serif'] tracking-tight text-[#c2cab0] hover:text-[#ccff80] transition-colors" href="#">Science</a>
+<a class="font-['Noto_Serif'] tracking-tight text-[#c2cab0] hover:text-[#ccff80] transition-colors" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-tight text-[#c2cab0] hover:text-[#ccff80] transition-colors" href="#">Support</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#c2cab0] hover:text-[#ccff80] transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="text-[#c2cab0] hover:text-[#ccff80] transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-5xl mx-auto">
+<!-- Header Section -->
+<header class="mb-20 border-l-2 border-primary pl-8">
+<span class="font-label text-xs uppercase tracking-[0.3em] text-secondary mb-4 block">Regulatory Documentation</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold tracking-tighter leading-none text-on-surface">Legal Notice</h1>
+<p class="mt-6 font-body text-on-surface-variant max-w-2xl text-lg leading-relaxed">
+                Vita-Alchemy operates at the nexus of synthetic excellence and clinical rigor. Below you will find our mandatory legal disclosures, hosting details, and intellectual property frameworks.
+            </p>
+</header>
+<!-- Bento Grid for Legal Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-px bg-outline-variant/10">
+<!-- Company Identification -->
+<section class="md:col-span-8 bg-surface-container-low p-10 md:p-14">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="corporate_fare">corporate_fare</span>
+<h2 class="font-label text-sm uppercase tracking-widest font-bold">Company Identification</h2>
+</div>
+<div class="space-y-6">
+<div>
+<p class="font-label text-[10px] uppercase text-on-surface-variant mb-1">Entity Name</p>
+<p class="font-headline text-2xl">BIOLABS NOIR SAS</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<p class="font-label text-[10px] uppercase text-on-surface-variant mb-1">Registered Office</p>
+<p class="text-on-surface">42 Synthetic Alchemist Way<br/>District 9, Bio-Tech Plaza<br/>75008 Paris, France</p>
+</div>
+<div>
+<p class="font-label text-[10px] uppercase text-on-surface-variant mb-1">Registration</p>
+<p class="text-on-surface">RCS Paris: 892 401 002<br/>Share Capital: €1,500,000<br/>VAT ID: FR 82 892401002</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Information -->
+<section class="md:col-span-4 bg-surface-container-high p-10 md:p-14 border-t md:border-t-0 md:border-l border-outline-variant/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary" data-icon="contact_support">contact_support</span>
+<h2 class="font-label text-sm uppercase tracking-widest font-bold">Contact</h2>
+</div>
+<div class="space-y-8">
+<div>
+<p class="font-label text-[10px] uppercase text-on-surface-variant mb-1">Digital Enquiries</p>
+<a class="text-primary hover:underline underline-offset-4 block" href="mailto:concierge@biolabsnoir.com">concierge@biolabsnoir.com</a>
+</div>
+<div>
+<p class="font-label text-[10px] uppercase text-on-surface-variant mb-1">Publication Director</p>
+<p class="text-on-surface">Dr. Julian V. Sterling<br/><span class="text-xs text-on-surface-variant italic">Chief Operations Officer</span></p>
+</div>
+</div>
+</section>
+<!-- Hosting & Technical -->
+<section class="md:col-span-6 bg-surface-container-high p-10 md:p-14 border-t border-outline-variant/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="dns">dns</span>
+<h2 class="font-label text-sm uppercase tracking-widest font-bold">Hosting Infrastructure</h2>
+</div>
+<p class="text-on-surface-variant mb-6 leading-relaxed">
+                    This website is hosted on high-availability synthetic cloud nodes provided by:
+                </p>
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/10 rounded-lg">
+<p class="font-headline text-lg mb-2">Neon-Grid Systems Ltd.</p>
+<p class="text-sm text-on-surface-variant">Data Center: EU-West-1 (Ireland)<br/>24/7 Monitoring &amp; Bio-Metric Security Access</p>
+</div>
+</section>
+<!-- Intellectual Property -->
+<section class="md:col-span-6 bg-surface-container-low p-10 md:p-14 border-t md:border-l border-outline-variant/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="copyright">copyright</span>
+<h2 class="font-label text-sm uppercase tracking-widest font-bold">Intellectual Property</h2>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                    All elements of the BIOLABS NOIR website—including brand identifiers, formulation data, chemical visualizers, and editorial photography—are the exclusive property of BIOLABS NOIR SAS. 
+                    <br/><br/>
+                    Any reproduction, distribution, modification, or use of these elements without prior written consent is strictly prohibited and constitutes a violation of international intellectual property laws.
+                </p>
+</section>
+</div>
+<!-- Detailed Legal Clauses -->
+<div class="mt-20 space-y-16">
+<div class="max-w-3xl">
+<h3 class="font-headline text-3xl mb-6 text-on-surface">1. Liability &amp; Scientific Content</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    The information provided on this site is for informational purposes only and does not replace professional medical advice. BIOLABS NOIR cannot be held liable for any misuse of products or misinterpretation of clinical data published herein. Always consult with a healthcare professional before beginning any new supplementation regimen.
+                </p>
+</div>
+<div class="max-w-3xl">
+<h3 class="font-headline text-3xl mb-6 text-on-surface">2. Hyperlinks &amp; Third-Party Assets</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    Our platform may contain links to external scientific journals or partner clinical labs. BIOLABS NOIR exerts no control over the content of these third-party sites and declines all responsibility for their privacy policies or content accuracy.
+                </p>
+</div>
+<div class="max-w-3xl">
+<h3 class="font-headline text-3xl mb-6 text-on-surface">3. Jurisdiction</h3>
+<p class="text-on-surface-variant leading-relaxed text-lg">
+                    This website and its legal notices are governed by French law. In the event of a dispute, and following a failure to reach an amicable solution, the courts within the jurisdiction of the Paris Court of Appeal shall have sole authority.
+                </p>
+</div>
+</div>
+<!-- Visual Anchor: Clinical Lab Image -->
+<div class="mt-24 w-full h-80 bg-surface-container-highest overflow-hidden rounded-xl relative">
+<img alt="High-tech clinical laboratory with glowing green neon accents and precision equipment in a dark moody setting" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-700" data-alt="ultra-modern dark chemistry lab with minimalist glass equipment glowing lime green under moody cinematic lighting and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ccctVTaGSB9b4IL7h68aPs80l9ZgdfnRktScX5X81d5-hlrUBb-wY7ub1yRuIKVEJP1a2KiPv15HFJaf669Toy4SuLuF6DMDQ7mfUJ_SgQTxN8jLZZumIHBZgD1HuM_fwye71rjN7TgaQ7Xz-kkRIMRPfe20hs7lMjvz563l_MtyL4ZebZqtGkbrsuGeZt5-AJYiGPBypH5bp9p3KN6eIOEmfHfBscfAHp-qRqtrU2QZ4AAoIyVqsMyerYgspiljWCt_xnSeaNA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-10 left-10">
+<p class="font-label text-xs uppercase tracking-[0.4em] text-primary">Lab-Certified Excellence</p>
+<p class="font-headline text-2xl mt-2 italic text-on-surface">Where science meets the elite standard.</p>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1c1b1b] dark:bg-[#1c1b1b] w-full border-t border-[#353535]">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-10 gap-6">
+<div class="text-lg font-black text-[#ccff80] uppercase tracking-tighter">BIOLABS NOIR</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#ccff80] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all duration-200" href="#">Privacy Policy</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all duration-200" href="#">Terms of Service</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all duration-200" href="#">Refund Policy</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all duration-200" href="#">Compliance</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#c2cab0] hover:text-[#ccff80] underline-offset-4 hover:underline transition-all duration-200" href="#">Lab Reports</a>
+</div>
+<div class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest text-[#c2cab0] opacity-60">
+                © 2024 BIOLABS NOIR. SYNTHETIC ALCHEMY FOR THE ELITE.
+            </div>
+</div>
+</footer>
+</body></html>

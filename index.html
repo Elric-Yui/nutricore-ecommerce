@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NutriCore — Compléments Alimentaires Premium</title>
+  <meta name="description" content="NutriCore : compléments alimentaires premium pour brûler les graisses, drainer, contrôler l'appétit et booster votre énergie."/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ── HEADER ────────────────────────────────────────────── -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Nutri<span>Core</span></a>
+
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#produits">Produits</a>
+        <a href="index.html#avis">Avis</a>
+        <a href="#">Notre histoire</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="cart.html" class="btn-cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Panier
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <button class="burger" id="burger" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#produits">Produits</a>
+      <a href="index.html#avis">Avis</a>
+      <a href="#">Notre histoire</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── HERO ──────────────────────────────────────────────── -->
+<section class="hero aurora-hero">
+  <!-- Aurora animated background (ported from Aceternity UI) -->
+  <div class="aurora-layer" aria-hidden="true"></div>
+  <div class="hero-bg"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Science & Performance
+        </div>
+        <h1 class="hero-title">
+          Transformez votre corps avec<br/>
+          <em>NutriCore Pro</em>
+        </h1>
+        <p class="hero-desc">
+          Des formules cliniquement étudiées pour brûler les graisses, booster votre métabolisme et sculpter la silhouette que vous méritez.
+        </p>
+        <div class="hero-ctas">
+          <a href="#produits" class="btn-primary">
+            Découvrir les produits
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#avis" class="btn-secondary">
+            Voir les avis clients
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">50<span>k+</span></div>
+            <div class="hero-stat-label">Clients satisfaits</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">4<span>.8★</span></div>
+            <div class="hero-stat-label">Note moyenne</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">8</div>
+            <div class="hero-stat-label">Produits premium</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-wrap">
+          <img
+            src="images/Gemini_Generated_Image_mfr2ifmfr2ifmfr2.png"
+            alt="ThermoFire Pro — Brûleur Thermogénique NutriCore"
+            class="hero-product-img"
+          />
+          <!-- Floating info card -->
+          <div class="hero-float-card">
+            <div class="hero-float-rating">★★★★★</div>
+            <div class="hero-float-name">ThermoFire Pro</div>
+            <div class="hero-float-price"><strong>34,90 €</strong> <del>44,90 €</del></div>
+          </div>
+          <!-- Discount badge -->
+          <div class="hero-badge-float">-15% Abonnement</div>
+          <!-- Glow ring -->
+          <div class="hero-glow-ring" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ─────────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Formules brevetées
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        Fabriqué en France
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Sans additifs nocifs
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        Livraison offerte dès 60€
+      </div>
+      <div class="trust-item">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.51"/></svg>
+        Satisfait ou remboursé 30j
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CATEGORIES ─────────────────────────────────────────── -->
+<section class="section" id="produits">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Nos gammes</span>
+      <h2>Choisissez votre <span class="green">objectif</span></h2>
+      <p>Chaque formule est développée par nos experts nutrition pour répondre précisément à vos besoins.</p>
+    </div>
+
+    <div class="shader-features-grid" id="categories-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ───────────────────────────────────────────── -->
+<section class="products-section">
+  <div class="container">
+    <div class="products-toolbar">
+      <p class="products-count"><strong id="product-count">0</strong> produits</p>
+      <select class="sort-select" id="sort-select">
+        <option value="default">Trier : Popularité</option>
+        <option value="price-asc">Prix croissant</option>
+        <option value="price-desc">Prix décroissant</option>
+        <option value="rating">Meilleures notes</option>
+        <option value="reviews">Plus d'avis</option>
+      </select>
+    </div>
+    <div class="products-grid" id="products-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ────────────────────────────────────────── -->
+<section class="section testimonials" id="avis">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Témoignages</span>
+      <h2>Ce que disent nos <span class="green">clients</span></h2>
+      <p>Plus de 50 000 clients font confiance à NutriCore pour atteindre leurs objectifs.</p>
+    </div>
+    <div class="testimonials-grid" id="testimonials-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ─────────────────────────────────────────── -->
+<section class="newsletter">
+  <div class="container">
+    <div class="newsletter-box">
+      <span class="section-tag">Newsletter</span>
+      <h2>Conseils & offres <span class="green">exclusives</span></h2>
+      <p>Recevez nos conseils nutrition, nos programmes minceur et bénéficiez d'offres exclusives réservées à nos abonnés.</p>
+      <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+        <input type="email" class="newsletter-input" placeholder="votre@email.com" required/>
+        <button type="submit" class="btn-primary">S'abonner</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Nutri<span>Core</span></div>
+        <p>Des compléments alimentaires de qualité premium, développés avec des ingrédients sélectionnés pour vous aider à atteindre vos objectifs.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Produits</h5>
+        <ul>
+          <li><a href="#" data-cat="burners">Brûleurs de graisse</a></li>
+          <li><a href="#" data-cat="drainants">Drainants & Détox</a></li>
+          <li><a href="#" data-cat="appetite">Coupe-Faim</a></li>
+          <li><a href="#" data-cat="booster">Boosters Énergie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Informations</h5>
+        <ul>
+          <li><a href="#">Notre histoire</a></li>
+          <li><a href="#">Nos engagements</a></li>
+          <li><a href="#">Blog nutrition</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Service client</h5>
+        <ul>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Livraison</a></li>
+          <li><a href="#">Retours</a></li>
+          <li><a href="#">Programme fidélité</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 NutriCore. Tous droits réservés.</span>
+      <div class="flex gap-2">
+        <a href="#">Mentions légales</a>
+        <a href="#">CGV</a>
+        <a href="#">Politique de confidentialité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── TOAST CONTAINER ────────────────────────────────────── -->
+<div id="toast-container"></div>
+
+<!-- ── SCRIPTS ────────────────────────────────────────────── -->
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  // ── State ────────────────────────────────────────────────
+  let activeCategory = 'all';
+  let sortOrder      = 'default';
+
+  // ── Render categories (Shader Feature Cards) ─────────────
+  function renderCategories() {
+    const grid = document.getElementById('categories-grid');
+    if (!grid) return;
+
+    grid.innerHTML = NUTRICORE_DATA.categories.map(cat => `
+      <div class="shader-card ${activeCategory === cat.id ? 'active' : ''}"
+           onclick="setCategory('${cat.id}')">
+        <!-- Animated WebGL-style gradient background -->
+        <div class="shader-bg"></div>
+        <!-- Dark glass overlay -->
+        <div class="shader-overlay"></div>
+        <!-- Content -->
+        <div class="shader-content">
+          <div class="shader-icon">${cat.icon}</div>
+          <div class="shader-title">${cat.name}</div>
+          <p class="shader-desc">${cat.description}</p>
+          <div class="shader-cta">
+            Voir les produits
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </div>
+      </div>`).join('');
+  }
+
+  // ── Get sorted/filtered products ─────────────────────────
+  function getFilteredProducts() {
+    let list = NUTRICORE_DATA.products.filter(p =>
+      activeCategory === 'all' || p.category === activeCategory
+    );
+
+    const sorts = {
+      'price-asc':  (a, b) => a.variants[0].price - b.variants[0].price,
+      'price-desc': (a, b) => b.variants[0].price - a.variants[0].price,
+      'rating':     (a, b) => b.rating - a.rating,
+      'reviews':    (a, b) => b.reviews - a.reviews,
+    };
+    if (sorts[sortOrder]) list = [...list].sort(sorts[sortOrder]);
+    return list;
+  }
+
+  // ── Render products ───────────────────────────────────────
+  function renderProducts() {
+    const grid  = document.getElementById('products-grid');
+    const count = document.getElementById('product-count');
+    if (!grid) return;
+
+    const list = getFilteredProducts();
+    count.textContent = list.length;
+
+    if (list.length === 0) {
+      grid.innerHTML = `<div class="no-results"><div class="icon">🔍</div>
+        <p>Aucun produit trouvé dans cette catégorie.</p></div>`;
+      return;
+    }
+
+    grid.innerHTML = list.map(p => {
+      const baseVariant = p.variants.find(v => v.popular) || p.variants[0];
+      const subPrice    = +(baseVariant.price * 0.85).toFixed(2);
+      const badge       = p.badge ? `<span class="product-badge" style="background:${p.badgeColor};color:#000">${p.badge}</span>` : '';
+      const icon        = getProductIcon(p.id);
+
+      return `
+        <div class="product-card" onclick="goToProduct('${p.id}')">
+          <div class="product-image">
+            <div class="product-image-placeholder">${icon}</div>
+            ${badge}
+            <button class="product-wishlist" onclick="event.stopPropagation();wishlist('${p.id}')">♡</button>
+          </div>
+          <div class="product-body">
+            <div class="product-category">${getCategoryLabel(p.category)}</div>
+            <div class="product-name">${p.name}</div>
+            <div class="product-tagline">${p.tagline}</div>
+            <div class="product-rating">
+              ${starsHTML(p.rating)}
+              <span class="rating-count">${p.rating} (${p.reviews} avis)</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <div>
+                  <span class="price-current">${fmtPrice(baseVariant.price)}</span>
+                  <span class="price-original">${fmtPrice(baseVariant.comparePrice)}</span>
+                </div>
+                <div class="price-sub-hint">Abonnement : ${fmtPrice(subPrice)}/mois</div>
+              </div>
+              <button class="btn-add" onclick="event.stopPropagation();quickAdd('${p.id}')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── Render testimonials ───────────────────────────────────
+  function renderTestimonials() {
+    const grid = document.getElementById('testimonials-grid');
+    if (!grid) return;
+    grid.innerHTML = NUTRICORE_DATA.testimonials.map(t => `
+      <div class="testimonial-card">
+        <div class="testi-header">
+          <div class="testi-avatar">${t.avatar}</div>
+          <div>
+            <div class="testi-name">${t.name}</div>
+            <div class="testi-meta">${t.location}</div>
+          </div>
+        </div>
+        <div class="testi-stars">${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}</div>
+        <p class="testi-text">"${t.text}"</p>
+        <div class="testi-product">✓ Acheteur vérifié · ${t.product}</div>
+      </div>`).join('');
+  }
+
+  // ── Actions ───────────────────────────────────────────────
+  function setCategory(catId) {
+    activeCategory = catId;
+    renderCategories();
+    renderProducts();
+    document.getElementById('produits')?.scrollIntoView({ behavior:'smooth', block:'start' });
+  }
+
+  function goToProduct(productId) {
+    location.href = `product.html?id=${productId}`;
+  }
+
+  function quickAdd(productId) {
+    const product  = NUTRICORE_DATA.products.find(p => p.id === productId);
+    if (!product) return;
+    const variant  = product.variants.find(v => v.popular) || product.variants[0];
+    Cart.addItem(product, variant, false);
+    showToast('🛒', 'Ajouté au panier', `${product.name} — ${variant.label}`);
+    updateCartBadge();
+  }
+
+  function wishlist(productId) {
+    const product = NUTRICORE_DATA.products.find(p => p.id === productId);
+    showToast('♡', 'Ajouté aux favoris', product?.name || '');
+  }
+
+  function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    showToast('✅', 'Inscription confirmée !', 'Vous recevrez nos offres exclusives.');
+    e.target.reset();
+  }
+
+  // ── Sort listener ─────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    const sortSel = document.getElementById('sort-select');
+    if (sortSel) {
+      sortSel.addEventListener('change', e => {
+        sortOrder = e.target.value;
+        renderProducts();
+      });
+    }
+
+    // Footer category links
+    document.querySelectorAll('[data-cat]').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        setCategory(a.dataset.cat);
+        document.getElementById('produits')?.scrollIntoView({ behavior:'smooth' });
+      });
+    });
+
+    renderCategories();
+    renderProducts();
+    renderTestimonials();
+  });
+</script>
+</body>
+</html>

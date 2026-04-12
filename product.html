@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Produit — NutriCore</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────────── -->
+<header class="header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">Nutri<span>Core</span></a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#produits">Produits</a>
+        <a href="index.html#avis">Avis</a>
+        <a href="#">Notre histoire</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="btn-cart">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Panier
+          <span class="cart-count" id="cart-count">0</span>
+        </a>
+        <button class="burger" id="burger">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#produits">Produits</a>
+      <a href="index.html#avis">Avis</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ── PAGE CONTENT ──────────────────────────────────────────── -->
+<div id="product-page" class="page">
+  <!-- Filled by JS -->
+</div>
+
+<!-- ── RELATED PRODUCTS ──────────────────────────────────────── -->
+<section class="section" id="related-section" style="display:none">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">À découvrir aussi</span>
+      <h2>Produits <span class="green">similaires</span></h2>
+    </div>
+    <div class="products-grid" id="related-grid"></div>
+  </div>
+</section>
+
+<div id="toast-container"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+  // ── State ─────────────────────────────────────────────────
+  let product       = null;
+  let selectedVariantIdx = 0;
+  let isSubscription     = false;
+
+  // ── Get product from URL ───────────────────────────────────
+  function getProductFromURL() {
+    const params = new URLSearchParams(location.search);
+    const id     = params.get('id');
+    return NUTRICORE_DATA.products.find(p => p.id === id) || NUTRICORE_DATA.products[0];
+  }
+
+  // ── Compute current price ──────────────────────────────────
+  function currentPrice() {
+    const variant = product.variants[selectedVariantIdx];
+    return isSubscription ? +(variant.price * 0.85).toFixed(2) : variant.price;
+  }
+
+  // ── Render full page ───────────────────────────────────────
+  function renderPage() {
+    document.title = `${product.name} — NutriCore`;
+    const variant = product.variants[selectedVariantIdx];
+    const icon    = getProductIcon(product.id);
+    const price   = currentPrice();
+    const savings = isSubscription ? +(variant.price * 0.15).toFixed(2) : 0;
+
+    document.getElementById('product-page').innerHTML = `
+      <div class="container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+          <a href="index.html">Accueil</a>
+          <span>›</span>
+          <a href="index.html#produits">${getCategoryLabel(product.category)}</a>
+          <span>›</span>
+          <span>${product.name}</span>
+        </div>
+
+        <!-- Detail grid -->
+        <div class="product-detail-grid">
+
+          <!-- Gallery -->
+          <div class="product-gallery">
+            <div class="gallery-main">
+              <div class="gallery-main-placeholder">${icon}</div>
+            </div>
+            <div class="gallery-thumbs">
+              ${[icon, icon, icon].map((ic, i) => `
+                <div class="gallery-thumb ${i === 0 ? 'active' : ''}">${ic}</div>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="product-info">
+            ${product.badge ? `<span class="product-info-badge" style="background:${product.badgeColor};color:#000">${product.badge}</span>` : ''}
+            <h1>${product.name}</h1>
+            <p class="product-tagline-detail">${product.tagline}</p>
+
+            <div class="product-rating-row">
+              <span class="rating-score">${product.rating}</span>
+              ${starsHTML(product.rating)}
+              <span class="rating-text">${product.reviews} avis vérifiés</span>
+            </div>
+
+            <!-- Subscription Calculator -->
+            <div class="subscription-calc">
+              <div class="calc-title">💡 Choisissez votre formule</div>
+              <div class="calc-options">
+                <div class="calc-option ${!isSubscription ? 'selected' : ''}"
+                     onclick="setSubscription(false)">
+                  <div class="calc-option-left">
+                    <div class="calc-radio"></div>
+                    <div>
+                      <div class="calc-option-label">Achat unique</div>
+                      <div class="calc-option-sub">Paiement en une fois</div>
+                    </div>
+                  </div>
+                  <span style="font-weight:700;color:var(--white)">${fmtPrice(variant.price)}</span>
+                </div>
+                <div class="calc-option ${isSubscription ? 'selected' : ''}"
+                     onclick="setSubscription(true)">
+                  <div class="calc-option-left">
+                    <div class="calc-radio"></div>
+                    <div>
+                      <div class="calc-option-label">Abonnement mensuel</div>
+                      <div class="calc-option-sub">Renouvellement automatique · Annulable à tout moment</div>
+                    </div>
+                  </div>
+                  <span class="calc-save-badge">-15%</span>
+                </div>
+              </div>
+              <div class="calc-price-display">
+                <span class="calc-total-label">
+                  ${isSubscription ? 'Prix abonnement / mois' : 'Prix total'}
+                </span>
+                <div class="calc-total-price">
+                  ${fmtPrice(price)}
+                  ${isSubscription ? `<del>${fmtPrice(variant.price)}</del>` : ''}
+                </div>
+              </div>
+              ${isSubscription ? `
+                <div style="margin-top:8px;font-size:.78rem;color:var(--green)">
+                  ✓ Vous économisez ${fmtPrice(savings)} / mois
+                </div>` : ''}
+            </div>
+
+            <!-- Variant selector -->
+            <div class="variant-group">
+              <div class="variant-label">Contenance</div>
+              <div class="variant-options">
+                ${product.variants.map((v, i) => `
+                  <button class="variant-btn ${i === selectedVariantIdx ? 'selected' : ''} ${v.popular ? 'popular' : ''}"
+                          onclick="setVariant(${i})">
+                    ${v.label}
+                    <span class="variant-price">${fmtPrice(v.price)}</span>
+                  </button>`).join('')}
+              </div>
+            </div>
+
+            <!-- CTAs -->
+            <div class="detail-ctas">
+              <button class="btn-add-large" onclick="addToCart()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter au panier
+              </button>
+              <button class="btn-wishlist-large" onclick="showToast('♡','Ajouté aux favoris','')">♡</button>
+            </div>
+
+            <!-- Guarantees -->
+            <div class="guarantee-row">
+              <div class="guarantee-item"><span>🚚</span> Livraison gratuite dès 60€</div>
+              <div class="guarantee-item"><span>🔄</span> Retour 30 jours</div>
+              <div class="guarantee-item"><span>🔒</span> Paiement sécurisé</div>
+              <div class="guarantee-item"><span>🇫🇷</span> Fabriqué en France</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="product-tabs">
+          <div class="tabs-nav">
+            <button class="tab-btn active" onclick="switchTab(this, 'tab-benefits')">Bénéfices</button>
+            <button class="tab-btn"        onclick="switchTab(this, 'tab-ingredients')">Composition</button>
+            <button class="tab-btn"        onclick="switchTab(this, 'tab-usage')">Utilisation</button>
+          </div>
+
+          <div class="tab-content active" id="tab-benefits">
+            <div class="benefits-list">
+              ${product.benefits.map(b => `
+                <div class="benefit-item">
+                  <div class="benefit-check">✓</div>
+                  <span>${b}</span>
+                </div>`).join('')}
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-ingredients">
+            <div class="ingredients-text">
+              <strong style="color:var(--white)">Ingrédients actifs par dose :</strong><br/><br/>
+              ${product.ingredients}
+            </div>
+          </div>
+
+          <div class="tab-content" id="tab-usage">
+            <div class="usage-text">
+              <strong style="color:var(--white)">Mode d'emploi :</strong><br/><br/>
+              ${product.usage}
+              <br/><br/>
+              <em>Ce complément alimentaire ne se substitue pas à une alimentation variée et équilibrée. Tenir hors de portée des enfants. Consulter un professionnel de santé en cas de traitement médicamenteux.</em>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // ── Render related products ────────────────────────────────
+  function renderRelated() {
+    const related = NUTRICORE_DATA.products
+      .filter(p => p.id !== product.id && (p.category === product.category || Math.random() > .5))
+      .slice(0, 4);
+
+    const section = document.getElementById('related-section');
+    const grid    = document.getElementById('related-grid');
+
+    if (!related.length) return;
+    section.style.display = '';
+
+    grid.innerHTML = related.map(p => {
+      const baseVariant = p.variants.find(v => v.popular) || p.variants[0];
+      const subPrice    = +(baseVariant.price * 0.85).toFixed(2);
+      const badge       = p.badge ? `<span class="product-badge" style="background:${p.badgeColor};color:#000">${p.badge}</span>` : '';
+      const icon        = getProductIcon(p.id);
+      return `
+        <div class="product-card" onclick="location.href='product.html?id=${p.id}'">
+          <div class="product-image">
+            <div class="product-image-placeholder">${icon}</div>
+            ${badge}
+          </div>
+          <div class="product-body">
+            <div class="product-category">${getCategoryLabel(p.category)}</div>
+            <div class="product-name">${p.name}</div>
+            <div class="product-tagline">${p.tagline}</div>
+            <div class="product-rating">
+              ${starsHTML(p.rating)}
+              <span class="rating-count">${p.rating} (${p.reviews})</span>
+            </div>
+            <div class="product-footer">
+              <div class="product-price">
+                <div>
+                  <span class="price-current">${fmtPrice(baseVariant.price)}</span>
+                  <span class="price-original">${fmtPrice(baseVariant.comparePrice)}</span>
+                </div>
+                <div class="price-sub-hint">Abonnement : ${fmtPrice(subPrice)}/mois</div>
+              </div>
+              <button class="btn-add" onclick="event.stopPropagation();quickAddRelated('${p.id}')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                Ajouter
+              </button>
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── Handlers ──────────────────────────────────────────────
+  function setVariant(idx) {
+    selectedVariantIdx = idx;
+    renderPage();
+  }
+
+  function setSubscription(val) {
+    isSubscription = val;
+    renderPage();
+  }
+
+  function addToCart() {
+    const variant = product.variants[selectedVariantIdx];
+    Cart.addItem(product, variant, isSubscription);
+    showToast('🛒', 'Ajouté au panier',
+      `${product.name} — ${variant.label}${isSubscription ? ' (Abonnement)' : ''}`);
+    updateCartBadge();
+  }
+
+  function quickAddRelated(productId) {
+    const p = NUTRICORE_DATA.products.find(pr => pr.id === productId);
+    if (!p) return;
+    const v = p.variants.find(x => x.popular) || p.variants[0];
+    Cart.addItem(p, v, false);
+    showToast('🛒', 'Ajouté au panier', `${p.name} — ${v.label}`);
+    updateCartBadge();
+  }
+
+  function switchTab(btn, tabId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(tabId)?.classList.add('active');
+  }
+
+  // ── Init ──────────────────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    product = getProductFromURL();
+    renderPage();
+    renderRelated();
+  });
+</script>
+</body>
+</html>
