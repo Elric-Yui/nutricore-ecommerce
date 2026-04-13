@@ -33,6 +33,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['thermofire-pro'],
+      imageUrl: 'https://images.pexels.com/photos/3683040/pexels-photo-3683040.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['thermogénique', 'caféine', 'carnitine'],
     },
     {
@@ -55,6 +56,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['slimburn-elite'],
+      imageUrl: 'https://images.pexels.com/photos/4040564/pexels-photo-4040564.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['CLA', 'sans caféine', 'nuit'],
     },
     {
@@ -77,6 +79,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['cutlean-max'],
+      imageUrl: 'https://images.pexels.com/photos/3683074/pexels-photo-3683074.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['sèche', 'BCAA', 'sport'],
     },
 
@@ -100,6 +103,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['aquadetox-plus'],
+      imageUrl: 'https://images.pexels.com/photos/7615571/pexels-photo-7615571.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['végane', 'détox', 'plantes'],
     },
     {
@@ -121,6 +125,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['drainfit-bio'],
+      imageUrl: 'https://images.pexels.com/photos/17820718/pexels-photo-17820718.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['bio', 'plantes', 'doux'],
     },
 
@@ -144,6 +149,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['satia-control'],
+      imageUrl: 'https://images.pexels.com/photos/3683099/pexels-photo-3683099.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['konjac', 'fibres', 'satiété'],
     },
 
@@ -168,6 +174,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['energyx-daily'],
+      imageUrl: 'https://images.pexels.com/photos/13787566/pexels-photo-13787566.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['adaptogène', 'ashwagandha', 'focus'],
     },
     {
@@ -189,6 +196,7 @@ const NUTRICORE_DATA = {
       ],
       subscription: { available: true, discount: 15 },
       images: ['nightburn-advanced'],
+      imageUrl: 'https://images.pexels.com/photos/18795567/pexels-photo-18795567.jpeg?auto=compress&cs=tinysrgb&w=600',
       tags: ['nuit', 'sommeil', 'mélatonine'],
     },
   ],
